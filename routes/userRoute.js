@@ -1,6 +1,6 @@
 // routes/userRoute.js
 import express from 'express';
-import { isAuthenticated } from '../middleware/isAuthenticated.js';
+import isAuthenticated from '../middleware/isAuthenticated.js'; //  Corrected import
 import User from '../models/User.js';
 
 const router = express.Router();

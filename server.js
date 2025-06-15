@@ -2,20 +2,16 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
-
+import userRoutes from './routes/userRoutes.js';
+import movieRoutes from './routes/movieRoutes.js';
 import authRoutes from './routes/authRoutes.js';
 
 dotenv.config();
 connectDB();
 
 const app = express();
-import movieRoutes from './routes/movieRoutes.js';
 app.use('/api/movies', movieRoutes);
-import userRoutes from './routes/userRoutes.js';
 app.use('/api/user', userRoutes);
-
-
-
 app.use(cors());
 app.use(express.json());
 
